@@ -7,6 +7,8 @@ import com.example.demo.repositories.SaleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SaleService {
     @Autowired
@@ -24,5 +26,9 @@ public class SaleService {
 
         inventoryRepository.save(inventory);
         return saleRepository.save(sale);
+    }
+
+    public List<Sale> readSales() {
+        return saleRepository.findAll();
     }
 }

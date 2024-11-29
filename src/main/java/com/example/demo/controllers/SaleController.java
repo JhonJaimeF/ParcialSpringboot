@@ -11,12 +11,9 @@ import java.util.List;
 @RequestMapping("/sales") public class SaleController {
     @Autowired
     private SaleService saleService;
-    @GetMapping
-    public List<Sale> getAllSales() {
+    @GetMapping public List<Sale> getAllSales() {
         return saleService.readSales();
-        return null;
-    }
-    @PostMapping
+    } @PostMapping
     public Sale createSale(@RequestBody Sale sale) {
         return saleService.createSale(sale);
     }
